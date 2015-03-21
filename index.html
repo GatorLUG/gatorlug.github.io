@@ -1,0 +1,42 @@
+---
+layout: default
+type: home
+---
+
+<section class="about">
+  <header>
+    <h2><a href="about">About Us</a></h2>
+  </header>
+  <p>{{ site.description }}</p>
+  <a href="about" class="read-more">Read more</a>
+</section>
+
+{% assign post = site.posts[0] %}
+<section class="meeting">
+  <header>
+    <h2>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+    </h2>
+  </header>
+  <span class="metadata">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+  {{ post.content }}
+</section>
+
+<section class="post-list">
+  <header>
+    <h2>Recent Posts</h2>
+  </header>
+  <ul>
+    {% for post in site.posts %}
+      <li>
+        <h3>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
+            {{ post.title }}
+          </a>
+        </h3>
+        <span class="metadata">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+</section>

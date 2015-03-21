@@ -1,0 +1,96 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import url(//brick.a.ssl.fastly.net/Roboto:400,400i,700)
+@import normalize
+@import common
+@import content
+
+body
+  background: #eeeeff
+  font-family: Roboto, Helvetica, Arial, sans-serif
+  margin: auto
+  padding: 0 5%
+  @include respond-to(tablet)
+    padding: 0
+  max-width: 70em
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+
+body>.wrapper
+  // make the footer "sticky"
+  flex: 1
+
+  // nav-bar/content positioning
+  display: flex
+  flex-direction: row
+  // allow the nav-bar/content to be different heights
+  align-items: flex-start
+
+// used for the "GatorLUG" top bar
+.site-header
+  margin: $large-gap $gap $gap $large-gap
+  width: 100%
+  color: black
+
+  h1
+    &>a
+      text-decoration: none
+      color: black
+    margin-top: 0
+    font-size: 1.75em
+    display: block
+
+  h2
+    font-size: 1em
+    font-style: italic
+    font-weight: normal
+    display: block
+    margin-bottom: 0
+
+  @include clearfix
+
+.site-footer
+  @extend %card
+  margin-top: 0px
+  margin-bottom: $gap
+  color: #444
+  .left
+    float: left
+  .right
+    float: right
+  @include clearfix
+
+.content
+  margin-left: -$gap
+  overflow-x: hidden
+  >section, >article
+    @extend %card
+
+.site-nav
+  @extend %card
+  flex: 0 0 10em
+  margin: $gap
+  padding: 0px
+  width: 60px
+  .geographic-region
+    font-size: 1.2em
+  >*
+    padding: $gap
+    margin: 0
+    &:not(:last-child)
+      border-bottom: 1px solid #ccccff
+  >ul
+    list-style: none
+    li:not(:last-child)
+      margin-bottom: $small-gap
+
+.post-list
+  h3
+    display: inline
+  .metadata
+    display: inline
+    &:before
+      content: " —  Posted on "

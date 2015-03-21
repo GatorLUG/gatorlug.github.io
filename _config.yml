@@ -1,0 +1,21 @@
+---
+# Site settings
+title: GatorLUG
+geographic_region: Gainesville, FL
+tagline: Freedom is Contagious
+email: gatorlug@benjam.info
+description: >
+  GatorLUG is a Linux User Group located in Gainesville, Florida. The purpose of
+  the group is education, support and advocacy for open source, open data
+  formats, and open communication standards.
+external_links:
+  "Mailing List": http://lists.ufl.edu/cgi-bin/wa?SUBED1=linux-l&A=1
+  "IRC Channel": irc://chat.freenode.net/gatorlug
+  "GatorLUG": https://github.com/GatorLUG
+  "Meetup.com": http://www.meetup.com/gatorlug/
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: http://gatorlug.org # the base hostname & protocol for your site
+github_username: gatorlug
+# Build settings
+markdown: kramdown
+exclude: [vendor]

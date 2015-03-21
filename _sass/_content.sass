@@ -1,0 +1,32 @@
+// basic styling of common elements that would make sense in articles and stuff
+.content
+  header h2
+    font-size: 1.75em
+
+  h2
+    font-size: 1.1em
+
+  .metadata
+    color: #444
+    margin-top: -1em
+    font-style: italic
+    display: block
+    &:before
+      content: "Posted on "
+
+  img
+    max-width: 100%
+    width: auto
+
+  dt
+    font-weight: bold
+
+  // map handling
+  .map-small
+    display: none
+
+  @include respond-to(mobile)
+    .map-large
+      display: none
+    .map-small
+      display: inherit

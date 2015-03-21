@@ -1,0 +1,47 @@
+@import normalize
+@import metrics
+
+@mixin clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
+%card
+  background-color: #ffffff
+  border-radius: $radius
+  border: 1px solid #ccccff
+  // shadow has -2px inset, so it doesn't bleed over the left or right
+  box-shadow: 0 3px 2px -2px rgba(0, 0, 0, 0.2)
+
+  // n.b. margins don't auto-collapse if nested inside elements
+  margin: $gap
+  padding: $gap
+
+  overflow: hidden
+
+  >*:first-child, >header>*:first-child
+    margin-top: 0
+  >*:last-child
+    margin-bottom: 0
+
+  // images should ignore the padding and run right up to the border
+  >p img
+    margin-left: -$gap
+    margin-right: -$gap
+    max-width: calc(100% + #{$gap * 2})
+  >p:last-child img
+    margin-bottom: -$gap
+    // Normally, the text is baseline-aligned, causing a few px to be left below
+    // the image for descenders
+    vertical-align: middle
+
+button, *[role="button"]
+  border-radius: $radius
+  border: none
+  background-color: black
+  color: white
+  padding: $small-gap
+  text-decoration: none
+  &:hover
+    text-decoration: underline

@@ -1,0 +1,10 @@
+<a href="https://maps.google.com/?daddr={{ include.location }}">
+  <img
+    class="map map-large"
+    alt="Map to {{ include.location }}"
+    src="//maps.googleapis.com/maps/api/staticmap?center={{ include.location }}&zoom=15&size=640x200&maptype=roadmap&markers=color:red|{{ include.location }}&scale=2">
+  <img
+    class="map map-small"
+    alt="Map to {{ include.location }}"
+    src="//maps.googleapis.com/maps/api/staticmap?center={{ include.location }}&zoom=14&size=320x200&maptype=roadmap&markers=color:red|{{ include.location }}&scale=2">
+</a>

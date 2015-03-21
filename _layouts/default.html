@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  {% include head.html %}
+  <body{% if page.css_class %} class="page-{{ page.css_class }}"{% endif %}>
+    <header class="site-header">
+      {% include header.html %}
+    </header>
+
+    <div class="wrapper">
+      <nav class="site-nav">
+        <h2 class="geographic-region">{{ site.geographic_region }}</h2>
+        <ul class="internal links">
+          <li><a href="{{ site.baseurl }}/">Home</a>
+          {% for page in site.pages %}
+            {% if page.title %}
+            <li>
+              <a class="page-link"
+                 href="{{ page.url | prepend: site.baseurl }}">
+                 {{ page.title }}
+              </a>
+            {% endif %}
+          {% endfor %}
+        </ul>
+        <ul class="external links">
+          {% for link in site.external_links %}
+            <li><a href="{{ link[1] }}">{{ link[0] }}</a>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <div class="content">
+        {{ content }}
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      {% include footer.html %}
+    </footer>
+
+  </body>
+</html>
